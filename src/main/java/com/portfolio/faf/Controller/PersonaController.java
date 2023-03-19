@@ -35,9 +35,9 @@ public class PersonaController {
     }
     @GetMapping("/detail/{id}")
     public ResponseEntity<Persona>getById(@PathVariable("id")int id){
-        /*if(!sEducacion.existsById(id)){
+        if(!sEducacion.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"),HttpStatus.BAD_REQUEST);
-        }*/
+        }
         Persona educacion=sEducacion.getOne(id).get();
         return new ResponseEntity(educacion,HttpStatus.OK);
     }

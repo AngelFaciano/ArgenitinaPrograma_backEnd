@@ -75,7 +75,7 @@ public class AuthController {
             return new ResponseEntity(new Mensaje("El Nombre de Usuario no Existe"), HttpStatus.BAD_REQUEST);
         }
        if(usuarioService.existsByNombreUsuario( loginUsuario.getNombreUsuario())&&!usuarioService.existsByNombreUsuario( loginUsuario.getPassword())){
-            return new ResponseEntity(new Mensaje("Contraseña incorrecta"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Contraseña Incorrecta"), HttpStatus.BAD_REQUEST);
         }
        Authentication authentication= authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(),loginUsuario.getPassword()));
        SecurityContextHolder.getContext().setAuthentication(authentication);

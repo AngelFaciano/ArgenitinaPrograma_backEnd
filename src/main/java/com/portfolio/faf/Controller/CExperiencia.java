@@ -78,7 +78,7 @@ public class CExperiencia {
         experiencia.setDescripcionE((dtoexp.getDescripcionE()));
         
         sExperiencia.save(experiencia);
-        return new ResponseEntity(new Mensaje("Experiencia actualizada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Experiencia Actualizada"), HttpStatus.OK);
              
     }
 }

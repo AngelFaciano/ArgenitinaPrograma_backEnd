@@ -77,6 +77,6 @@ public class CEducacion {
         educacion.setNombreE(dtoeducacion.getNombreE());
         educacion.setDescripcionE(dtoeducacion.getDescripcionE());
         sEducacion.save(educacion);
-        return new ResponseEntity(new Mensaje("Educacion actualizada"),HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Educacion Actualizada"),HttpStatus.OK);
     }
 }
