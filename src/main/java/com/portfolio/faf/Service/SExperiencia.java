@@ -2,6 +2,7 @@ package com.portfolio.faf.Service;
 
 import com.portfolio.faf.Entity.Experiencia;
 import com.portfolio.faf.Repository.RExperencia;
+import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -13,8 +14,8 @@ import org.springframework.stereotype.Service;
 public class SExperiencia {
     @Autowired
     RExperencia rExperiencia;
-    public List<Experiencia>list(){
-        return rExperiencia.findAll();
+    public List<Experiencia>list(String usuarioe){
+        return rExperiencia.existsByUsuariE(usuarioe);
     }
     public Optional<Experiencia> getOne(int id){
         return rExperiencia.findById(id);

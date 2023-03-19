@@ -21,13 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/explab")
+@CrossOrigin(origins = {"http://localhost:4200/","https://portfoliofaciano.web.app/","https://portfoliofaciano.web.app"})
 public class CExperiencia {
     @Autowired
     SExperiencia sExperiencia;
     
-    @GetMapping("/lista")
-    public ResponseEntity<List<Experiencia>> list(){
-        List<Experiencia> list = sExperiencia.list();
+    @GetMapping("/lista/{usuario}")
+    public ResponseEntity<List<Experiencia>> list(@PathVariable("id") String usu){
+        List<Experiencia> list = sExperiencia.list(usu);
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
